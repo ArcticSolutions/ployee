@@ -1,6 +1,6 @@
 <?php
 
-interface Tools_Mapper_Interface
+interface Tools_Model_Mapper_Interface
 {
     public function __construct(array $options = null);
     
@@ -21,7 +21,7 @@ interface Tools_Mapper_Interface
     public function setDbTable($dbTable);
     public function getDbTable();
     
-    public function save(Tools_Model $model);
-    public function find($id);
+    public function save(Tools_Model_Abstract $model);
+    public function find($id, Tools_Model_Abstract $model);
     public function fetchAll();
 }

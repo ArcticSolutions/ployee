@@ -1,6 +1,6 @@
 <?php
 
-abstract class Tools_Mapper_Abstract implements Tools_Mapper_Interface
+abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interface
 {
     protected $_defaultDbTable;
     protected $_defaultModel;
