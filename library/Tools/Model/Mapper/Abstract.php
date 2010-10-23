@@ -110,7 +110,7 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
     {
         $data = array();
         
-        foreach ($this->getModelcols as $col) {
+        foreach ($this->getModelcols() as $col) {
             $data[$col] = $model->$col;
         }
         
@@ -122,14 +122,14 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
         }
     }
     
-    public function find($id, Tools_Model_Abstract $model)
+    public function find($id, Tools_Model_Abstract $model = null)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $this->mapModel($row, $model);
+        return $this->mapModel($row, $model);
     }
     
     public function fetchAll()
@@ -145,7 +145,7 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
         return $entries;
     }
     
-    protected function mapModel(Zend_Db_Table_Row $row, $model = null)
+    protected function mapModel(Zend_Db_Table_Row $row, Tools_Model_Abstract $model = null)
     {
         if (null == $this->_defaultModel) {
             throw new Exception('No default model set for ' . get_class($this));
