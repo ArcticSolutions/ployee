@@ -23,7 +23,7 @@ abstract class Tools_Model_Abstract implements Tools_Model_Interface
     public function __get($name)
     {
         $method = 'get' . ucfirst($name);
-        if (('mapper' == $name) || method_exists($this, $method)) {
+        if (('mapper' == $name) || !method_exists($this, $method)) {
             throw new Exception('Invalid model property');
         }
         return $this->$method();
