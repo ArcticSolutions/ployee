@@ -15,7 +15,16 @@
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Employees"/>
+          <dbTableFile dbTableName="Images"/>
+        </dbTableDirectory>
+        <modelFile modelName="Employee"/>
+        <modelFile modelName="Image"/>
+        <modelFile modelName="EmployeeMapper"/>
+        <modelFile modelName="ImageMapper"/>
+      </modelsDirectory>
       <modulesDirectory>
         <moduleDirectory moduleName="admin">
           <apisDirectory enabled="false"/>
