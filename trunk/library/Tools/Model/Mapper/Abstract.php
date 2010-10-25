@@ -26,7 +26,7 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
     public function __get($name)
     {
         $method = 'get' . ucfirst($name);
-        if (method_exists($this, $method)) {
+        if (!method_exists($this, $method)) {
             throw new Exception('Invalid mapper property');
         }
         return $this->$method();
