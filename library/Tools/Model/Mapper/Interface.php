@@ -9,10 +9,10 @@ interface Tools_Model_Mapper_Interface
     
     public function setOptions(array $options);
     
-    public function setDefaultmodel(string $model);
+    public function setDefaultmodel($model);
     public function getDefaultmodel();
     
-    public function setDefaultdbtable(string $dbtable);
+    public function setDefaultdbtable($dbtable);
     public function getDefaultdbtable();
     
     public function setModelcols(array $cols);
