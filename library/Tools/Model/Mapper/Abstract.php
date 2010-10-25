@@ -129,7 +129,7 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
             return;
         }
         $row = $result->current();
-        return $this->mapModel($row, $model);
+        return $this->_mapModel($row, $model);
     }
     
     public function fetchAll()
@@ -140,12 +140,12 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
         $resultSet  = $this->getDbTable()->fetchAll();
         $entries    = array();
         foreach ($resultSet as $row) {
-            $entries[] = $this->mapModel($row);
+            $entries[] = $this->_mapModel($row);
         }
         return $entries;
     }
     
-    protected function mapModel(Zend_Db_Table_Row $row, Tools_Model_Abstract $model = null)
+    protected function _mapModel(Zend_Db_Table_Row $row, Tools_Model_Abstract $model = null)
     {
         if (null == $this->_defaultModel) {
             throw new Exception('No default model set for ' . get_class($this));
