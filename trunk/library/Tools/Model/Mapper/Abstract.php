@@ -46,7 +46,7 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
         return $this;
     }
     
-    public function setDefaultmodel(string $model)
+    public function setDefaultmodel($model)
     {
         $this->_defaultModel = (string) $model;
         return $this;
@@ -57,7 +57,7 @@ abstract class Tools_Model_Mapper_Abstract implements Tools_Model_Mapper_Interfa
         return $this->_defaultModel;
     }
     
-    public function setDefaultdbtable(string $dbtable)
+    public function setDefaultdbtable($dbtable)
     {
         $this->_defaultDbTable = (string) $dbtable;
         return $this;
