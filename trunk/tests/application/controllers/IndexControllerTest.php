@@ -1,5 +1,7 @@
 <?php
 
+require_once 'PHPUnit/Framework/TestCase.php';
+
 class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
     protected function setUp()
@@ -16,5 +18,10 @@ class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         $this->dispatch('/');
         $this->assertController('index');
         $this->assertAction('index');
+    }
+    
+    public function tearDown()
+    {
+        /* Tear Down Routine */
     }
 }
