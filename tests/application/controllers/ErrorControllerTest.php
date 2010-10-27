@@ -1,5 +1,7 @@
 <?php
 
+require_once 'PHPUnit/Framework/TestCase.php';
+
 class ErrorControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
     protected function setUp()
@@ -23,5 +25,10 @@ class ErrorControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         $this->dispatch('/thiswillnotbefound');
         $this->assertController('error');
         $this->assertAction('error');
+    }
+    
+    public function tearDown()
+    {
+        /* Tear Down Routine */
     }
 }
