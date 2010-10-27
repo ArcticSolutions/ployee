@@ -1,6 +1,6 @@
 <?php
 
-require_once 'PHPUnit/Framework/TestCase.php';
+require_once 'Zend/Test/PHPUnit/ControllerTestCase.php';
 
 class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
@@ -13,7 +13,7 @@ class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         parent::setUp();
     }
     
-    public function testIndexAction()
+    public function testIndexActionNotLoggedIn()
     {
         $this->dispatch('/');
         $this->assertController('index');

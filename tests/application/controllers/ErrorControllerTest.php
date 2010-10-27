@@ -1,6 +1,6 @@
 <?php
 
-require_once 'PHPUnit/Framework/TestCase.php';
+require_once 'Zend/Test/PHPUnit/ControllerTestCase.php';
 
 class ErrorControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
