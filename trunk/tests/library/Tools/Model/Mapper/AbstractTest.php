@@ -1,7 +1,18 @@
 <?php
 
+require_once 'PHPUnit/Framework/TestCase.php';
+
 class Tools_Model_Mapper_AbstractTest extends PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        $this->bootstrap = new Zend_Application(
+            APPLICATION_ENV,
+            APPLICATION_PATH . '/configs/application.ini'
+        );
+        parent::setUp();
+    }
+    
     protected function _getDbTable()
     {
         $stub = $this->getMockForAbstractClass('Zend_Db_Table_Abstract');
