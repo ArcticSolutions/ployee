@@ -1,6 +1,8 @@
 <?php
 
-class Application_Model_Employee extends Tools_Model_Abstract
+class Application_Model_Employee
+    extends Tools_Model_Abstract
+    implements Zend_Acl_Role_Interface
 {
     protected $_id;
     protected $_name;
@@ -9,6 +11,10 @@ class Application_Model_Employee extends Tools_Model_Abstract
     protected $_password;
     protected $_extra = false;
     protected $_selected_id;
+    
+    protected $_images = null;
+    
+    protected $_aclRoleId = 'employee';
     
     public function setName($name)
     {
@@ -74,5 +80,23 @@ class Application_Model_Employee extends Tools_Model_Abstract
     public function getSelected_id()
     {
         return $this->_selected_id;
+    }
+    
+    public function getImages()
+    {
+        if ($this->_images == null) {
+            $imageMapper = new Application_Model_ImageMapper();
+            $this->_images = $imageMapper->getAllImagesForEmployee($this->getId());
+        }
+        return $this->_images;
+    }
+    
+    public function getRoleId()
+    {
+        if ($this->_aclRoleId == null) {
+            return 'guest';
+        }
+        
+        return $this->_aclRoleId;
     }
 }
