@@ -17,6 +17,9 @@
           <actionMethod actionName="login"/>
           <actionMethod actionName="logout"/>
         </controllerFile>
+        <controllerFile controllerName="Image">
+          <actionMethod actionName="index"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory>
         <formFile formName="Login"/>
@@ -64,6 +67,9 @@
           <viewControllerScriptsDirectory forControllerName="Auth">
             <viewScriptFile forActionName="logout"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Image">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
@@ -98,12 +104,13 @@
       <testApplicationDirectory>
         <testApplicationBootstrapFile filesystemName="bootstrap.php"/>
         <testApplicationControllerDirectory>
+          <testApplicationControllerFile filesystemName="IndexControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ErrorControllerTest.php"/>
           <testApplicationControllerFile filesystemName="AuthControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ImageControllerTest.php"/>
         </testApplicationControllerDirectory>
       </testApplicationDirectory>
-      <testLibraryDirectory>
-        <testLibraryBootstrapFile filesystemName="bootstrap.php"/>
-      </testLibraryDirectory>
+      <testLibraryDirectory/>
     </testsDirectory>
   </projectDirectory>
 </projectProfile>
