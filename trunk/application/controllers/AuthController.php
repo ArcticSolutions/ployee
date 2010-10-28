@@ -8,7 +8,7 @@ class AuthController extends Zend_Controller_Action
         $auth = Zend_Auth::getInstance();
         
         if (!$auth->hasIdentity() and $this->getRequest()->getActionName() != 'login') {
-            $this->_redirect('/auth/login');
+            $this->_redirect('/login');
             return;
         }
     }
@@ -61,7 +61,7 @@ class AuthController extends Zend_Controller_Action
         $auth = Zend_Auth::getInstance();
         if ($auth->hasIdentity()) {
             $auth->clearIdentity();
-            $this->_redirect('/auth/login');
+            $this->_redirect('/login');
             return;
         }
     }
