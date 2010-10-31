@@ -7,7 +7,7 @@ class AuthController extends Zend_Controller_Action
     {
         $auth = Zend_Auth::getInstance();
         
-        if (!$auth->hasIdentity() and $this->getRequest()->getActionName() != 'login') {
+        if (!$auth->hasIdentity() && $this->getRequest()->getActionName() != 'login') {
             $this->_redirect('/login');
             return;
         }
