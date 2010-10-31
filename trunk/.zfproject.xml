@@ -12,6 +12,7 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="confirm"/>
           <actionMethod actionName="confirmed"/>
+          <actionMethod actionName="selected"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
         <controllerFile controllerName="Auth">
@@ -77,6 +78,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Index">
             <viewScriptFile forActionName="confirmed"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="selected"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

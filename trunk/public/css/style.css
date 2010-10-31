@@ -73,18 +73,15 @@ button {  width: auto; overflow: visible; }
 
 
  /* Primary Styles
-    Author: 
+    Author: David Stangeby
  */
 header { font-size:32pt }
 
-ul.imageList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 630px;
-}
-
+ul.imageList { list-style: none; margin: 0; width: 630px }
 ul.imageList li { display: inline-block; margin: 5px }
+
+ul.confirmList { list-style: none; margin: 0 }
+ul.confirmList li { display: inline-block; margin: 20px }
 
 /* 
  * print styles
