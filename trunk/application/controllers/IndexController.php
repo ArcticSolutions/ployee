@@ -18,8 +18,13 @@ class IndexController extends Zend_Controller_Action
         $this->_employeeMapper = new Application_Model_EmployeeMapper();
         $this->_employee = $this->_employeeMapper->find($auth->getIdentity()->id);
         
-        if ($this->_employee->selected_id != null and $this->getRequest()->getActionName() != 'selected') {
+        if ($this->_employee->selected_id != null && $this->getRequest()->getActionName() != 'selected') {
             $this->_redirect('/selected');
+            return;
+        }
+        
+        if ($this->getRequest()->getActionName() == 'selected' && $this->_employee->selected_id == null) {
+            $this->_redirect('/');
             return;
         }
     }
