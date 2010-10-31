@@ -11,4 +11,6 @@ interface Tools_Model_Interface
     
     public function setId($id);
     public function getId();
+    
+    public function toArray();
 }
