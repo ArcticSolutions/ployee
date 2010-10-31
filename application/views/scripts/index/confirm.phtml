@@ -1,1 +1,9 @@
-<br /><br /><center>View script for controller <b>Index</b> and script/action name <b>confirm</b></center>
+<p>Er dette det bilde du ønsker å bruke?</p>
+<ul class="confirmList">
+    <li><a href="<?php echo $this->url(array('id' => $this->imageId), 'confirmed'); ?>">Ja</a></li>
+    <li><a href="/">Nei</a></li>
+</ul>
+
+<p>
+    <img src="/image/<?php echo $this->imageId; ?>" />
+</p>
