@@ -53,4 +53,11 @@ abstract class Tools_Model_Abstract implements Tools_Model_Interface
     {
         return $this->_id;
     }
+    
+    public function toArray()
+    {
+        $array = array();
+        $array['id'] = $this->getId();
+        return $array;
+    }
 }
