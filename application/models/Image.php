@@ -56,5 +56,15 @@ class Application_Model_Image
     {
         return $this->_aclResourceId;
     }
+    
+    public function toArray()
+    {
+        $array = array('id'             => $this->getId(),
+                       'filename'       => $this->getFilename(),
+                       'filename_thumb' => $this->getFilename_thumb(),
+                       'originalname'   => $this->getOriginalname(),
+                       'employee_id'    => $this->getEmployee_id());
+        return $array;
+    }
 }
 

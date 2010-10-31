@@ -1,6 +1,6 @@
 <p>Hei <?php echo $this->employeeName; ?></p>
 <p>Vennligst velg bilde du ønsker at skolen skal bruke.</p>
 
-<?php foreach($this->images as $image): ?>
-<img src="\image\<?php echo $image->id; ?>\thumb" />
-<?php endforeach ?>
+<ul class="imageList">
+    <?php echo $this->partialLoop('partials/partialIndexImages.phtml', $this->images); ?>
+</ul>
