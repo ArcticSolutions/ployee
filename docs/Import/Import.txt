@@ -1,0 +1,26 @@
+Script for importing images and users to the ployee web app.
+
+Usage: -d importdir -i exportdir -u startid -m mysql user -p mysql password -n mysql database -s mysql server
+-d: Directory to import from
+-i: Directory to export to
+-u: User id to start incrementing from, eg. 1000
+-m: Mysql user
+-p: Mysql password
+-n: Mysql database name
+-s: Mysql server address
+
+Expects the following directory structure:
+
+NameOfUser\
+    Image01.jpg
+    Image02.jpg
+    ...
+    email.txt
+
+1. Directory name will be used for name of the employee.
+2. All files with .jpg extention will be imported as images for that employee.
+3. Content of the email.txt document will be used as the email assigned with the
+   employee.
+
+All the images will get two versions imported, one with a 200 pixel width and one with a 590 one. A thumb and a
+lage view respectivly.
