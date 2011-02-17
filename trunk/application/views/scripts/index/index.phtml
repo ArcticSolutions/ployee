@@ -1,5 +1,5 @@
-<p>Hei <?php echo $this->employeeName; ?></p>
-<p>Vennligst velg bilde du ønsker at skolen skal bruke.</p>
+<h2>Hei <?php echo $this->employeeName; ?></h2>
+<p>Vennligst velg bilde du ønsker at skolen skal bruke. Du kan trykke på bilde for å se en større versjon.</p>
 
 <ul class="imageList">
     <?php echo $this->partialLoop('partials/partialIndexImages.phtml', $this->images); ?>
